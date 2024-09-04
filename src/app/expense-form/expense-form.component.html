@@ -1,0 +1,37 @@
+<div class="container mt-5">
+<div class="row justify-content-center">
+    <div class=" col-auto col-lg-6 ">
+        <h3 class="h3 text-dark">Expenses</h3>
+        <form [formGroup]="expenseform" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="price" class="form-label fw-semibold">Price: </label>
+            <input type="text" class="form-control" id="price" placeholder="Price" formControlName="price" required >
+            <div *ngIf="expenseform.get('price')?.invalid && expenseform.get('price')?.touched" class="text-danger mt-2" >
+                First name is Required
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="title" class="form-label fw-semibold">Title: </label>
+            <input type="text" class="form-control" id="title" placeholder="Title" formControlName="title" required >
+            <div *ngIf="expenseform.get('title')?.invalid && expenseform.get('title')?.touched" class="text-danger mt-2" >
+               Title is Required
+            </div>
+        </div>
+
+          <div class="mb-3">
+            <label for="description" class="form-label fw-semibold">Description: </label>
+            <textarea class="form-control" id="description" rows="3" formControlName="description" required></textarea>
+            <div *ngIf="expenseform.get('description')?.invalid && expenseform.get('description')?.touched" class="text-danger mt-2" >
+                Description is Required
+            </div>
+        </div>
+
+
+          <button class="btn btn-success me-4" type="submit">Save Changes</button>
+          <button class="btn btn-warning" (click)="onBack()">Back</button>
+
+        </form>
+    </div>
+</div>
+</div>

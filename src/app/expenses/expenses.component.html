@@ -1,0 +1,10 @@
+<div class="container mt-5">
+<div class="d-flex justify-content-between align-items-center">
+    <button class="btn btn-primary" routerLink="expense-form">Add Expenses</button>
+    <h5 class="fw-bold">Total Expenses: <strong class="text-success">${{getTotalExpenses()}}</strong></h5>
+</div>
+
+<div class=" my-4" *ngFor="let detail of details">
+    <app-expensecard [detail]="detail"></app-expensecard>
+</div>
+</div>

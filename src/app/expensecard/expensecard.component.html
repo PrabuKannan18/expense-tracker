@@ -1,0 +1,11 @@
+<div class="container">
+<div class="card-body shadow p-3 ">
+    <h5 class="card-title">{{detail.title}}</h5>
+    <h2 class="text-success fw-bold " >${{detail.price}}</h2>
+    <p class="card-text">{{detail.description}}</p>
+    <div class="d-flex gap-2 ">
+      <button class="btn btn-success" (click)="onEdit()">Edit</button>
+      <button class="btn btn-danger" (click)="onRemove()">Remove</button>
+  </div>
+  </div>
+</div>
